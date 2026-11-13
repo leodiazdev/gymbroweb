@@ -1,0 +1,74 @@
+/* GymBro web — same "Volt" identity as the app (colors from theme/colors.ts). */
+
+@font-face { font-family: "Space Grotesk"; font-weight: 600; font-display: swap; src: url("fonts/SpaceGrotesk_600SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Space Grotesk"; font-weight: 700; font-display: swap; src: url("fonts/SpaceGrotesk_700Bold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 400; font-display: swap; src: url("fonts/Inter_400Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; font-display: swap; src: url("fonts/Inter_600SemiBold.ttf") format("truetype"); }
+
+:root {
+  color-scheme: dark light;
+  --bg: #0C0D10;
+  --surface: #16181D;
+  --surface-2: #22252D;
+  --border: transparent;
+  --text: #F2F3F5;
+  --muted: #A3A9B6;
+  --accent: #D7FF3A;
+  --on-accent: #0C0D10;
+  --display: "Space Grotesk", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #F3F4F6;
+    --surface: #FFFFFF;
+    --surface-2: #EBEDF1;
+    --border: #E3E6EB;
+    --text: #101216;
+    --muted: #4F5663;
+    --accent: #4A6400;
+    --on-accent: #FFFFFF;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 400 16px/1.6 var(--body); }
+main, .bar, footer { max-width: 760px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+h1, h2, h3, .brand { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; }
+h1 { font-size: clamp(34px, 8vw, 52px); line-height: 1.05; margin: 0 0 16px; }
+h2 { font-size: 24px; line-height: 1.2; margin: 48px 0 12px; }
+h3 { font-size: 18px; font-weight: 600; margin: 0 0 4px; }
+p, li { margin: 0 0 12px; }
+.muted { color: var(--muted); }
+
+.bar { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
+.brand { display: flex; align-items: center; gap: 10px; font-size: 20px; color: var(--text); text-decoration: none; }
+.brand img { width: 36px; height: 36px; border-radius: 10px; }
+
+.hero { padding: 40px 0 8px; }
+.hero .logo { width: 96px; height: 96px; border-radius: 26px; margin-bottom: 24px; }
+.lead { font-size: 19px; color: var(--muted); max-width: 34em; }
+
+.pill { display: inline-block; padding: 12px 22px; border-radius: 999px; font-family: var(--display); font-weight: 600; text-decoration: none; }
+.pill.primary { background: var(--accent); color: var(--on-accent); }
+.pill.ghost { background: var(--surface-2); color: var(--text); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 20px; }
+.grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 600px) { .grid { grid-template-columns: 1fr 1fr; } }
+.grid .card p { color: var(--muted); margin: 0; }
+.eyebrow { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.08em; color: var(--accent); margin: 48px 0 8px; }
+
+.not { list-style: none; padding: 0; }
+.not li { padding-left: 28px; position: relative; }
+.not li::before { content: "✕"; position: absolute; left: 4px; color: var(--muted); }
+
+.policy h2 { margin-top: 32px; }
+.policy .card { margin: 24px 0; }
+
+footer { padding-top: 48px; padding-bottom: 40px; font-size: 14px; color: var(--muted); }
+footer a { color: var(--muted); }
+footer nav { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 8px; }
